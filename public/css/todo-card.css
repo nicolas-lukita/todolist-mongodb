@@ -1,0 +1,48 @@
+.todo-card {
+	color: darkslategray;
+	margin: 1rem 5rem;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+	border-radius: 8px;
+	padding: 1rem;
+}
+
+.todo-card.Casual {
+	background-color: lightgreen;
+}
+
+.todo-card.Moderate {
+	background-color: lightgoldenrodyellow;
+}
+
+.todo-card.Urgent {
+	color: white;
+	background-color: lightcoral;
+}
+
+.todo-card a {
+	color: rgb(63, 95, 154);
+}
+
+.todo-card a:hover {
+	color: white;
+}
+
+.todo-card h2,
+.todo-card p {
+	margin: 0.5rem 0;
+}
+
+.todo-actions {
+	padding: 1rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.todo-actions button {
+	margin-left: 2rem;
+}
+
+.todo-actions form {
+	margin: 0;
+}

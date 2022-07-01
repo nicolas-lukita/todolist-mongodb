@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('components/head', {title: "MongoDB TODO"}) %>
+		<link rel="stylesheet" href="/css/form.css" />
+		<link rel="stylesheet" href="/css/todo-card.css" />
+	</head>
+	<body>
+		<%- include('components/banner') %>
+		<main id="all-todo">
+			<h1>To do list:</h1>
+			<% if(!todoItems || todoItems.length === 0) {%>
+			<p>No more things to do!</p>
+			<a href="/create-todo">Create new todo</a>
+			<% } else { %>
+			<ol>
+				<%for (todo of todoItems){%>
+
+				<li><%- include('components/todo-card', {todo: todo}) %></li>
+
+				<%}%>
+			</ol>
+			<%}%>
+		</main>
+	</body>
+</html>

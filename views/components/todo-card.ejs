@@ -1,0 +1,10 @@
+<div class="todo-card <%=todo.level.level%>">
+	<h2><%=todo.todo%></h2>
+	<p><%=todo.details%></p>
+	<div class="todo-actions">
+		<a href="/todos/<%=todo._id%>/edit">Edit</a>
+		<form action="/todos/<%=todo._id%>/delete" method="POST">
+			<button class="btn">DONE</button>
+		</form>
+	</div>
+</div>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('components/head', {title: "Edit Todo"}) %>
+		<link rel="stylesheet" href="/css/form.css" />
+	</head>
+	<body>
+		<%- include('components/banner') %>
+		<main>
+			<h1>Edit Todo</h1>
+			<form action="/todos/<%=todo._id%>/edit" method="POST">
+				<div class="form-sec">
+					<label>Todo</label>
+					<input
+						type="text"
+						id="todo"
+						name="todo"
+						required
+						value="<%=todo.todo%>"
+					/>
+				</div>
+				<div class="form-sec">
+					<label>Details</label>
+					<textarea id="details" name="details" rows="5">
+<%=todo.details%></textarea
+					>
+				</div>
+				<div class="form-sec">
+					<label>Level</label>
+					<select id="level" name="level">
+						<% for (levelData of levels){%>
+						<option value="<%= levelData._id%>"><%= levelData.level%></option>
+						<%}%>
+					</select>
+				</div>
+				<button class="btn">Save changes</button>
+			</form>
+		</main>
+	</body>
+</html>

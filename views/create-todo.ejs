@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<%- include('components/head', {title: "New Todo"}) %>
+		<link rel="stylesheet" href="/css/form.css" />
+	</head>
+	<body>
+		<%- include('components/banner') %>
+		<main>
+			<h1>Create new todo</h1>
+			<form action="/todos" method="POST">
+				<div class="form-sec">
+					<label>Todo</label>
+					<input type="text" id="todo" name="todo" required />
+				</div>
+				<div class="form-sec">
+					<label>Details</label>
+					<textarea id="details" name="details" rows="5"></textarea>
+				</div>
+				<div class="form-sec">
+					<label>Level</label>
+					<select id="level" name="level">
+						<% for (levelData of levels){%>
+						<option value="<%= levelData._id%>"><%= levelData.level%></option>
+						<%}%>
+					</select>
+				</div>
+				<button class="btn">Create todo</button>
+			</form>
+		</main>
+	</body>
+</html>
