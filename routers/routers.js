@@ -13,7 +13,6 @@ router.get("/", (req, res) => {
 
 router.get("/todos", async (req, res) => {
 	const todoItems = await db.getDb().collection("todos").find().toArray();
-	console.log(todoItems);
 	res.render("todo-lists", { todoItems: todoItems });
 });
 
@@ -37,8 +36,6 @@ router.post("/todos", async (req, res) => {
 
 router.get("/todos/:todoId/edit", async (req, res) => {
 	const todoId = new ObjectId(req.params.todoId);
-	console.log("ASDFASDF  =>" + req.params.todoId);
-	console.log("asdfasdf  =>" + todoId);
 	const levels = await db.getDb().collection("levels").find({}).toArray();
 
 	const todoItem = await db
